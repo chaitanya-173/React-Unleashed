@@ -1,19 +1,31 @@
-import React from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
+import "./App.css";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
+import { useState } from "react";
 
 function App() {
+  let [foodItems, setFoodItems] = useState([]);
 
-  let foodItems = ["Dal", "Green-Vegetable", "Roti", "Salad", "Milk", "Ghee"];
-  
+  const onKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let newFoodItem = event.target.value;
+      event.target.value = "";
+      let newItems = [...foodItems, newFoodItem];
+      setFoodItems(newItems);
+    }
+  };
+
   return (
-    <React.Fragment>
-      <h1>Healthy Food</h1>
-      <ErrorMessage></ErrorMessage>
-      <FoodItems></FoodItems>
-    </React.Fragment>
+    <>
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <FoodInput handleKeyDown={onKeyDown}></FoodInput>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
+    </>
   );
 }
 
