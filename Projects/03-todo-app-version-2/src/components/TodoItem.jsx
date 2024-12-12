@@ -1,4 +1,4 @@
-function TodoItem({todoName, todoDate}) {
+function TodoItem({ todoName, todoDate }) {
   return (
     <div className="container">
       <div className="row cc-row">
