@@ -1,8 +1,8 @@
-const Sidebar = ({ selectedTab, setselectedTab }) => {
+const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
-      style={{ width: "280px" }}
+      style={{ width: "180px" }}
     >
       <a
         href="/"
@@ -18,7 +18,7 @@ const Sidebar = ({ selectedTab, setselectedTab }) => {
         <li
           className="nav-item"
           onClick={() => {
-            setselectedTab("Home");
+            setSelectedTab("Home");
           }}
         >
           <a
@@ -36,7 +36,7 @@ const Sidebar = ({ selectedTab, setselectedTab }) => {
         </li>
         <li
           onClick={() => {
-            setselectedTab("Create Post");
+            setSelectedTab("Create Post");
           }}
         >
           <a
