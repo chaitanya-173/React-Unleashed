@@ -17,8 +17,9 @@ function App() {
   };
 
   const deleteItem = (itemName) => {
-    const newTodoItems = todoItems.filter((item) => item.name !== itemName);
-    setTodoItems(newTodoItems);
+    setTodoItems((prevItems) =>
+      prevItems.filter((item) => item.name !== itemName)
+    );
   };
 
   return (
