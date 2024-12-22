@@ -7,7 +7,6 @@ import CreatePost from "./components/CreatePost";
 import PostList from "./components/PostList";
 import { useState } from "react";
 
-// Define initialPostList before App
 const initialPostList = [
   {
     id: "1",
