@@ -22,7 +22,6 @@ const PostList = () => {
       });
 
     return () => {
-      console.log("Cleaning up use effect.");
       controller.abort();
     };
   }, []);
